@@ -1,1 +1,12 @@
-{{"prefix": {{"{0}":"{1}"}}}}
+{{
+    "query": {{
+        "bool": {{
+            "should: [
+                {{"prefix": {{"name": "{0}"}}}},
+                {{"prefix": {{"symbol": "{0}"}}}},
+                {{"prefix": {{"entrezgene": "{0}"}}}},
+                {{"prefix": {{"ensembl.gene": "{0}"}}}}
+            ]
+        }}
+    }}
+}}
