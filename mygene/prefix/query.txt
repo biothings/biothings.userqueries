@@ -1,7 +1,7 @@
 {{
     "query": {{
         "bool": {{
-            "should: [
+            "should": [
                 {{"prefix": {{"name": "{0}"}}}},
                 {{"prefix": {{"symbol": "{0}"}}}},
                 {{"prefix": {{"entrezgene": "{0}"}}}},
