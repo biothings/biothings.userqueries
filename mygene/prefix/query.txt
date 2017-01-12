@@ -2,10 +2,11 @@
     "query": {{
         "bool": {{
             "should": [
-                {{"prefix": {{"name": "{0}"}}}},
-                {{"prefix": {{"symbol": "{0}"}}}},
-                {{"prefix": {{"_id": "{0}"}}}},
-                {{"prefix": {{"ensembl.gene": "{0}"}}}}
+                {{"prefix": {{"name": "{q}"}}}},
+                {{"prefix": {{"symbol": {{"value": "{q}", "boost": 10.0}}}}}},
+                {{"prefix": {{"_id": "{q}"}}}},
+                {{"prefix": {{"ensembl.gene": "{q}"}}}},
+                {{"prefix": {{"other_names": "{q}"}}}}
             ]
         }}
     }}
