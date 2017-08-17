@@ -1,1 +1,1 @@
-{{"query_string":{{"query": "{0}"}}}}
+{"query_string":{"query": "{{q}}"}}
