@@ -1,13 +1,11 @@
 {
-    "query": {
-        "bool": {
-            "should": [
-                {"prefix": {"name": "{{q}}"}},
-                {"prefix": {"symbol": {"value": "{{q}}", "boost": 10.0}}},
-                {"prefix": {"_id": "{{q}}"}},
-                {"prefix": {"ensembl.gene": "{{q}}"}},
-                {"prefix": {"other_names": "{{q}}"}}
-            ]
-        }
+    "bool": {
+        "should": [
+            {"prefix": {"name": "{{q}}"}},
+            {"prefix": {"symbol": {"value": "{{q}}", "boost": 10.0}}},
+            {"prefix": {"_id": "{{q}}"}},
+            {"prefix": {"ensembl.gene": "{{q}}"}},
+            {"prefix": {"other_names": "{{q}}"}}
+        ]
     }
 }
