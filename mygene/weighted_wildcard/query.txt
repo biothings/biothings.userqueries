@@ -1,0 +1,44 @@
+{
+    "dis_max": {
+      "tie_breaker": 0,
+      "boost": 1,
+      "queries": [
+        {
+          "function_score": {
+            "query": {
+              "wildcard": {
+                "symbol": {
+                  "value": "{{q}}"
+                }
+              }
+            },
+            "boost": "{{symbol_weight}}"
+          }
+        },
+        {
+          "function_score": {
+            "query": {
+              "wildcard": {
+                "name": {
+                  "value": "{{q}}"
+                }
+              }
+            },
+            "boost": "{{name_weight}}"
+          }
+        },
+        {
+          "function_score": {
+            "query": {
+              "wildcard": {
+                "summary": {
+                  "value": "{{q}}"
+                }
+              }
+            },
+            "boost": "{{summary_weight}}"
+          }
+        }
+      ]
+    }
+}
