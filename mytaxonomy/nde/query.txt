@@ -1,0 +1,17 @@
+{
+  "function_score": {
+    "query": {"query_string": {"query": "{{q}}"}},
+    "functions": [
+      {
+        "filter": {"term": {"other_names.exact": "{{q}}"}},
+        "weight": 15.0
+      },
+      {
+        "filter": {"match_phrase": {"other_names": "{{q}}"}},
+        "weight": 5.0
+      }
+    ],
+    "score_mode": "max",
+    "boost_mode": "multiply"
+  }
+}
